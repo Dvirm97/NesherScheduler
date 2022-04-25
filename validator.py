@@ -30,4 +30,4 @@ def validate(soldiers, num_of_shifts):
     if solution:
         return availability
     else:
-        return None  
+        return None

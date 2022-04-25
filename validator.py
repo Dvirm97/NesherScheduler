@@ -1,8 +1,6 @@
 import backtracker
 import random
 
-random.sample(range(1, 100), 3)  # [77, 52, 45]
-
 
 def validate(soldiers, num_of_shifts):
     availability = {}

@@ -17,7 +17,7 @@ def solve(values, safe_up_to, size):
 
     def extend_solution(position):
         for value in values:
-            solution[position]['soldier_id'] = value['id']
+            solution[position]['soldier_id'] = value
             if safe_up_to(solution, position):
                 if position >= size-1 or extend_solution(position+1):
                     return solution

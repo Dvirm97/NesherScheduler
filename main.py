@@ -1,5 +1,6 @@
 from hungarian_algorithm import algorithm
 from data import soldiers, shifts
+from validator import validate
 
 
 def schedule_soldiers(soldiers_available_shifts):
@@ -40,12 +41,12 @@ def get_soldier_by_id(soldier_id):
             return soldier
 
 
+def sort_soldiers():
+    return sorted(soldiers, key=lambda d: d['points'])
+
+
 def main():
-    soldiers_available_shifts = {'8686518': [1, 2, 3],
-                                 '8463627': [2, 3, 4, 5],
-                                 '8811066': [1, 2, 3, 4, 5],
-                                 '6631368': [4],
-                                 '9035532': [2, 3, 4]}
+    soldiers_available_shifts = validate(sort_soldiers(), 5)
     schedule = schedule_soldiers(soldiers_available_shifts)
     print(schedule)
 
